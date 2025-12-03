@@ -92,3 +92,19 @@ Eliminar (delete)
 Se localiza el valor y se elimina. En chaining, se quita de la lista. En open addressing, se marca como "eliminado".
 
 // Pseudocódigo sencillo
+función eliminar(tabla, clave):
+    índice = función_hash(clave)
+    si tabla[indice] tiene la clave:
+        quitar tabla[indice]
+    si no:
+        eliminar_en_colisión(tabla, índice, clave)
+Ejemplo visual
+Tabla Hash
+A
+B
+C
+(vacío)
+(eliminado)
+Se insertan las claves A, B y C.
+Se busca la clave B.
+Se elimina la clave en la celda marcada como "eliminado".
