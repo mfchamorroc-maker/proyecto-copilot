@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Inventario - Tablas Hash</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Sistema de Gestión de Inventario</h1>
+            <p>Usando Tablas Hash como estructura de datos</p>
+        </header>
+
+        <main>
+            <section class="formulario-section">
+                <h2>Agregar Nuevo Producto</h2>
+                <form id="formularioProducto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Producto:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio Unitario:</label>
+                        <input type="number" id="precio" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoría:</label>
+                        <select id="categoria">
+                            <option value="General">General</option>
+                            <option value="Electrónica">Electrónica</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Libros">Libros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Agregar Producto</button>
+                </form>
+            </section>
+
+            <section class="busqueda-section">
+                <h2>Buscar Producto</h2>
+                <div class="form-group">
+                    <input type="text" id="busqueda" placeholder="Buscar por nombre...">
+                    <button onclick="buscarProductos()" class="btn-secondary">Buscar</button>
+                </div>
+            </section>
+
+            <section class="reportes-section">
+                <h2>Reportes</h2>
+                <button onclick="generarReporte()" class="btn-secondary">Generar Reporte</button>
+                <div id="reporteResultado" class="reporte-resultado"></div>
+            </section>
+
+            <section class="productos-section">
+                <h2>Productos en Inventario</h2>
+                <div id="tablaProductos" class="tabla-productos"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Sistema de Gestión de Inventario - Estructura de Datos</p>
+        </footer>
+    </div>
+
+    <script src="../src/HashTable.js"></script>
+    <script src="../src/GestorInventario.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>
